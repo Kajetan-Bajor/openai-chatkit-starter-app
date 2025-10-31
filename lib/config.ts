@@ -17,20 +17,12 @@ export const PLACEHOLDER_INPUT = "Napisz wiadomość";
 
 export const GREETING = "Jak mogę ci dzisiaj pomóc";
 
-export function getThemeConfig(theme: ColorScheme): ThemeOption {
-  // Wklej tutaj obiekt `theme` wyeksportowany z Playground
-  return {
-    color: {
-      accent: { primary: "#00FF6E", level: 1 },
-      surface: { background: "#0E1013", foreground: "#1A1C20" },
-      grayscale: { /* ... */ }
-    },
-    radius: "pill",
-    density: "normal",
-    typography: { /* ... ustawienia czcionki ... */ },
-    // itp. zgodnie z wyeksportowanym kodem
-  };
-}
-  // Add other theme options here
-  // chatkit.studio/playground to explore config options
+export const getThemeConfig = (theme: ColorScheme): ThemeOption => ({
+  color: {
+    accent: { primary: '#00FF6E', level: 1 }, // Twój kolor akcentu
+    grayscale: { hue: 220, tint: 6, shade: theme === "dark" ? -1 : -4 }
+  },
+  radius: 'pill',          // na przykład zaokrąglenie rogów
+  density: 'normal'       // gęstość interfejsu
+  // Możesz tu dodać inne opcje jak typografia, background itp.
 });
