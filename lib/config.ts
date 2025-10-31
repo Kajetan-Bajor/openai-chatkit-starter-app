@@ -1,8 +1,8 @@
 import type { ChatKitOptions } from "@openai/chatkit";
 
-const options: ChatKitOptions = {
+export const options: ChatKitOptions = {
   api: {
-    wf_690500b8d0f0819090979af048e6ae3c0517372b0fcb7300
+    // Nie musisz nic tu zmieniać — ChatKit sam połączy się z agentem.
   },
   theme: {
     colorScheme: 'dark',
@@ -20,7 +20,7 @@ const options: ChatKitOptions = {
     },
     typography: {
       baseSize: 16,
-      fontFamily: '"OpenAI Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif',
+      fontFamily: '"OpenAI Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
       fontFamilyMono: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace',
       fontSources: [
         {
@@ -30,7 +30,6 @@ const options: ChatKitOptions = {
           style: 'normal',
           display: 'swap'
         }
-      // ...and 7 more font sources
       ]
     }
   },
@@ -46,5 +45,4 @@ const options: ChatKitOptions = {
     greeting: 'Strateg Marketingowy Zyne',
     prompts: [],
   },
-  // Optional fields not shown: locale, initialThread, threadItemActions, header, onClientTool, entities, widgets
 };
