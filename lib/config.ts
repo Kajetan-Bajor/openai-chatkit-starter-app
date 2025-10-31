@@ -1,7 +1,7 @@
 import type { ChatKitOptions } from "@openai/chatkit";
 
 const options: ChatKitOptions = {
-  api: {
+  api: {wf_690500b8d0f0819090979af048e6ae3c0517372b0fcb7300
     // TODO: configure your ChatKit API integration (URL, auth, uploads).
   },
   theme: {
