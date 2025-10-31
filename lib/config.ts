@@ -20,10 +20,8 @@ export const GREETING = "Jak mogę ci dzisiaj pomóc";
 export const getThemeConfig = (theme: ColorScheme): ThemeOption => ({
   color: {
     accent: { primary: '#00FF6E', level: 1 }, // Twój kolor akcentu
+    grayscale: { hue: 220, tint: 6, shade: theme === "dark" ? -1 : -4 }
   },
-      surface: {
-        background: '#0E1013',
-        foreground: '#1A1C20'
   radius: 'pill',          // na przykład zaokrąglenie rogów
   density: 'normal'       // gęstość interfejsu
   // Możesz tu dodać inne opcje jak typografia, background itp.
