@@ -15,14 +15,21 @@ export const STARTER_PROMPTS: StartScreenPrompt[] = [
 
 export const PLACEHOLDER_INPUT = "Napisz wiadomość";
 
-export const GREETING = "Jak mogę ci dzisiaj pomóc";
+export const GREETING = "Asystent Zyne";
 
 export const getThemeConfig = (theme: ColorScheme): ThemeOption => ({
   color: {
-    accent: { primary: '#00FF6E', level: 1 }, // Twój kolor akcentu
-    grayscale: { hue: 220, tint: 6, shade: theme === "dark" ? -1 : -4 }
+    grayscale: {
+      hue: 220,
+      tint: 6,
+      shade: theme === "dark" ? -1 : -4,
+    },
+    accent: {
+      primary: theme === "dark" ? "#f1f5f9" : "#060607",
+      level: 1,
+    },
   },
-  radius: 'pill',          // na przykład zaokrąglenie rogów
-  density: 'normal'       // gęstość interfejsu
-  // Możesz tu dodać inne opcje jak typografia, background itp.
+  radius: "round",
+  // Add other theme options here
+  // chatkit.studio/playground to explore config options
 });
