@@ -20,7 +20,12 @@ export default function RootLayout({
           strategy="beforeInteractive"
         />
       </head>
-      <body className="antialiased">{children}</body>
+      <body
+        className="antialiased text-white"
+        style={{ backgroundColor: "#060607" }}
+      >
+        {children}
+      </body>
     </html>
   );
 }
