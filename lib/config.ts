@@ -1,35 +1,52 @@
-import { ColorScheme, StartScreenPrompt, ThemeOption } from "@openai/chatkit";
+// lib/config.ts
+import type { ChatKitOptions } from "@openai/chatkit";
 
-export const WORKFLOW_ID =
-  process.env.NEXT_PUBLIC_CHATKIT_WORKFLOW_ID?.trim() ?? "";
-
-export const CREATE_SESSION_ENDPOINT = "/api/create-session";
-
-export const STARTER_PROMPTS: StartScreenPrompt[] = [
-  {
-    label: "Start",
-    prompt: "Start",
-    icon: "circle-question",
-  },
-];
-
-export const PLACEHOLDER_INPUT = "Napisz wiadomość";
-
-export const GREETING = "Asystent Zyne";
-
-export const getThemeConfig = (theme: ColorScheme): ThemeOption => ({
-  color: {
-    grayscale: {
-      hue: 220,
-      tint: 6,
-      shade: theme === "dark" ? -1 : -4,
+/**
+ * Konfiguracja wyglądu / motywu ChatKit.
+ * - Jeśli chcesz dodać więcej fontSources, skopiuj strukturę w tablicy fontSources.
+ * - Nie umieszczaj tutaj kluczy API.
+ */
+export const config: Partial<ChatKitOptions> = {
+  theme: {
+    colorScheme: "dark",
+    radius: "pill",
+    density: "normal",
+    color: {
+      accent: { primary: "#ffffff", level: 1 },
+      surface: { background: "#121112", foreground: "#1e1e1f" }
     },
-    accent: {
-      primary: theme === "dark" ? "#f1f5f9" : "#060607",
-      level: 1,
-    },
+    typography: {
+      baseSize: 16,
+      fontFamily:
+        '"OpenAI Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif',
+      fontFamilyMono:
+        'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace',
+      fontSources: [
+        {
+          family: "OpenAI Sans",
+          src: "https://cdn.openai.com/common/fonts/openai-sans/v2/OpenAISans-Regular.woff2",
+          weight: 400,
+          style: "normal",
+          display: "swap"
+        }
+        // Jeśli masz dodatkowe fontSources z Playgound, dopisz je tutaj jako kolejne obiekty.
+      ]
+    }
   },
-  radius: "round",
-  // Add other theme options here
-  // chatkit.studio/playground to explore config options
-});
+
+  composer: {
+    placeholder: "Napisz wiadomość",
+    attachments: {
+      enabled: true,
+      maxCount: 5,
+      maxSize: 10_485_760 // 10 MB w bajtach
+    }
+  },
+
+  startScreen: {
+    greeting: "Asystent Zyne",
+    prompts: []
+  }
+};
+
+export default config;
