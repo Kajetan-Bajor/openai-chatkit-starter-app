@@ -17,7 +17,7 @@
 /* --- Automatyczny ciemny motyw jeśli preferencja systemu --- */
 @media (prefers-color-scheme: dark) {
   :root:not([data-color-scheme]) {
-    --background: #060607;
+    --background: #060607 !important;
     --foreground: #ffffff;
     color-scheme: dark;
   }
