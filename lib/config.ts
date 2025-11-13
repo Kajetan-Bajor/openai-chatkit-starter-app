@@ -9,7 +9,7 @@ export const CREATE_SESSION_ENDPOINT = "/api/create-session";
 // Twój greeting i placeholder
 export const STARTER_PROMPTS: StartScreenPrompt[] = []; // puste, bo masz własny greeting
 export const PLACEHOLDER_INPUT = "Napisz wiadomość"; // z Twojego playground
-export const GREETING = "Asystent Zyne"; // Twój greeting
+export const GREETING = "Witaj, jestem Zyne 👋\nWystarczy minuta, żebym pokazał Ci, jak Zyne może zwiększyć sprzedaż i odciążyć Twój zespół."; // Twój greeting
 
 // Funkcja generująca Twój motyw
 export const getThemeConfig = (_theme: ColorScheme): ThemeOption => ({
